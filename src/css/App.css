@@ -1,0 +1,14 @@
+
+.prviheader{
+  border: 1px solid orange;
+  display: flex;
+  justify-content: center;
+  box-sizing: border-box;
+  width: 100vw ;
+  position: fixed;  
+}
+
+.prviheader > button {
+  margin-right: 10px;
+}
+

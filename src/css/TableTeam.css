@@ -1,0 +1,58 @@
+
+
+.newplayer{
+  display: flex;
+  justify-content: center;
+  border: solid 1px red;
+  padding: 10px;
+}
+.newplayerforma{
+  display: flex;
+  justify-content: center;
+
+}
+
+.container{
+  display: inline-flex;
+}
+
+.teams{
+  margin-right: 50px;
+}
+
+
+.parent{
+    display: flex;
+    flex-direction:  column;
+    justify-content: center;
+    border: 1px red solid;
+}
+
+.ch1{
+  border: 1px solid cyan;
+  display: block;
+  min-height: 100px;
+}
+
+.ch3{
+  margin-top: 3vh;
+  border: 1px magenta solid;
+  display: flex;
+  justify-content: center;
+  
+ 
+}
+
+.ch2{
+  border: 1px solid cyan;
+  display: block;
+  min-height: 100px;
+  padding: 30px;
+  position: fixed;
+}
+
+.ch4{
+  display: flex;
+  justify-content: center;
+  
+}

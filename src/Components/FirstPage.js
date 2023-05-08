@@ -12,10 +12,9 @@ function FirstPages(){
 
   const [prikazTabele, setPrikazTabele] = useState();
   const [isLoading, setLoading] = useState(true);
-  const [isShown, setIsShown] = useState(false);
   
   const dataAxios = () => {
-     axios.get('http://localhost:5023/listteam').then(res => {
+     axios.get('http://localhost:5023/listcity').then(res => {
       setPrikazTabele(res.data);
       setLoading(false);
       console.log(res.data);
@@ -33,9 +32,11 @@ function FirstPages(){
   
   else
     return(
+
         <div className='navbuttons'>
+            {console.log(Object.keys(prikazTabele).length)}
             <button onClick={() => {navigate("/teams")}}>Team</button>
-            <button>Player</button>
+            <button onClick={() => {navigate("/allplayers")}}>Player</button>
             <button>State</button>
         </div>
     );

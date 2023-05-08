@@ -8,6 +8,7 @@ import TableTeams from './Components/TableTeam';
 import AllPlayers from './Components/AllPlayers';
 import TablePlayerPerTeam from './Components/TablePlayerPerTeam';
 import StatesPerPlayer from './Components/StatesPerPlayer';
+import AddCities from './Components/AddCities';
 
 function App() {
 
@@ -29,6 +30,7 @@ function App() {
           <Route path="/players" element={<TablePlayerPerTeam/>}/>
           <Route path="/states" element={<StatesPerPlayer/>}/>
           <Route path="/allplayers" element={<AllPlayers/>}/>
+          <Route path="/addcities" element={<AddCities/>}/>
         </Routes>
 
     </>

@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 import '../css/FirstPage.css'
 
 
+
 function FirstPages(){
 
   const navigate = useNavigate();
@@ -28,10 +29,17 @@ function FirstPages(){
 
 
   if(isLoading)
-  {}
+  {
+  }
   
-  else
-    return(
+  else{
+    if(Object.keys(prikazTabele).length<2){
+      alert("Unesite grad")
+      navigate("/addcities")
+    }
+    else{
+      alert("Imate gradove za rad sa tabelama")
+      return(
 
         <div className='navbuttons'>
             {console.log(Object.keys(prikazTabele).length)}
@@ -40,6 +48,7 @@ function FirstPages(){
             <button>State</button>
         </div>
     );
+  }}
 }
 
 export default FirstPages;

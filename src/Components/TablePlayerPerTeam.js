@@ -66,10 +66,9 @@ function TablePlayerPerTeam(props){
                 )
                 })
             }
-                    
-
             </div>
-            <div className='tppt'>
+            
+            <div className='tppt3'>
                 <div className='tppt2'>
                     <PlayerForm imetima={ime} refresh={dataAxios}>
                     </PlayerForm>

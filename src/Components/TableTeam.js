@@ -24,6 +24,7 @@ function TableTeams(){
       setPrikazTabele(res.data);
       setLoading(false);
       console.log(res.data);
+      setshowNewTeamButton(true);
     });
   }
 
@@ -37,15 +38,15 @@ function TableTeams(){
   const [showNewTeamButton,setshowNewTeamButton] = useState(true)
 
 
-  const NewPlayer = () => {
-   setshowNewTeamButton(true);
-    const onClick = () => {setOpenNewTeamForm(true);
+  const NewTeam = () => {
+    const onClick = () => {
+      setOpenNewTeamForm(true);
       setopenEditTeamForm(false);
       setshowNewTeamButton(false);
     }
     return (
   
-        <button onClick={onClick}  className=''>New Player</button>        
+        <button onClick={onClick}  className='buton'>New Team</button>        
 
     )
   };
@@ -53,7 +54,6 @@ function TableTeams(){
   const [openEditTeamForm, setopenEditTeamForm] = useState(false)
 
   const [niz, setNiz] = useState([]);
-  const [pomoc, setPomoc] = useState(false);
 
   const ShowForm = (props) =>{
     setNiz(props);
@@ -63,14 +63,15 @@ function TableTeams(){
   };
 
   const Closebutton = () =>{
-    const onClikck3 = ()=>{
+    
+    const onClikck3 = () =>{
       setOpenNewTeamForm(false);
       setopenEditTeamForm(false);
       setshowNewTeamButton(true);
     }
 
     return(
-      <button className='ch2' onClick={onClikck3}>Close</button>
+      <button className='buton' onClick={onClikck3}>Close</button>
     )
   }
 
@@ -78,16 +79,19 @@ function TableTeams(){
   const hiddeForm = () =>{
     if(openNewTeamForm == true){
       setOpenNewTeamForm(false);
-      setshowNewTeamButton(true);
+    
+      
     }
    
   };
 
   const  hiddenEditForm = () => {
-    setopenEditTeamForm(false);
-    setshowNewTeamButton(true);
+    setopenEditTeamForm(false); 
   }
 
+  const hiddenPlayerFrom = () =>{
+    setOpenNewTeamForm(false);
+  }
 
 
   const PressDeleteTeam =(prosledjeno) => () => {
@@ -103,44 +107,46 @@ function TableTeams(){
   
   else
     return(
+      <div>
       <div className='parent'>
-        <div className='ch2'>
-          <div className='newplayerforma'>{ showNewTeamButton ? <NewPlayer /> : null }</div>
-          <div className='newplayerforma'>{ openNewTeamForm ? <Closebutton /> : null }</div>
-          <div className='newplayerforma'>{ openEditTeamForm ? <Closebutton /> : null }</div>
-          <div className='newplayerforma'>{ openNewTeamForm ? <TeamForm refresh={dataAxios} /> : null }</div>
-          <div className='newplayerforma'>{ openEditTeamForm ? <EditTeamForm podaci={niz} refresh={dataAxios} eddited={hiddenEditForm}/> : null }</div>
-        </div>
+          <div className='buttonAndForm'>
+            <div className='buttons'>
+              <div className='buton'>{ showNewTeamButton ? <NewTeam /> : <Closebutton />  }</div>
+            </div>
 
-        <div onClick={hiddeForm} className='ch1'> 
+          <div className='forms'>
+            <div className='newplayerforma'>{ openNewTeamForm ? <TeamForm refresh={dataAxios} pushed={hiddenPlayerFrom} /> : null }</div>
+            <div className='newplayerforma'>{ openEditTeamForm ? <EditTeamForm podaci={niz} refresh={dataAxios} eddited={hiddenEditForm}/> : null }</div>
+          </div>
+        </div>
+      </div>  
+      
+        <div onClick={hiddeForm} className='showTable'> 
           { 
             prikazTabele.map(element => {
               return(
-                
               <>
-                <container className="container">
+                <div className="container">
                 <div className='teams'>
-                <h2>Ime kluba: <i>{element.teamName}</i></h2> 
-                <h3>Broj pobeda: {element.numberOfWins}</h3>
-                <h3>Broj clanova: <CounterPlayer imetima={element.teamName} ></CounterPlayer></h3>
-                <h4>Lokacija:<i> {element.street} {element.buildingNumber}</i> {element.nameCities}</h4>
-                <button onClick={() => {navigate('/players',{
-                  state : {
-                    nameOfTeam: element.teamName}
-                })}}>Show players</button>
-                <button onClick={() => ShowForm(element)}>Edit team</button>
-                <button onClick={PressDeleteTeam(element.id)}>Delete</button>
+                  <h2>Ime kluba: <i>{element.teamName}</i></h2> 
+                  <h3>Broj pobeda: {element.numberOfWins}</h3>
+                  <h3>Broj clanova: <CounterPlayer imetima={element.teamName} ></CounterPlayer></h3>
+                  <h4>Lokacija:<i> {element.street} {element.buildingNumber}</i> {element.nameCities}</h4>
+                  <button onClick={() => {navigate('/players',{
+                      state : {
+                        nameOfTeam: element.teamName}
+                    })}}>Show players</button>
+                  <button onClick={() => ShowForm(element)}>Edit team</button>
+                  <button onClick={PressDeleteTeam(element.id)}>Delete</button>
                 </div>
-                </container>
+                </div>
                 
               </>
                )
               })
-          }
-                 
-
+            }      
         </div>
-        </div>
+      </div>
     );
 }
 

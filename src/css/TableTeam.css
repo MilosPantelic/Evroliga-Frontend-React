@@ -1,11 +1,53 @@
-
-
-.newplayer{
+.parent{
   display: flex;
-  justify-content: center;
-  border: solid 1px red;
-  padding: 10px;
+  flex-direction:  column;
+  flex-wrap: wrap;
+  background-color: #F18E00;
+
+
 }
+
+.buttonAndForm{
+border-radius: 5%; 
+color: #F18E00;
+background-color: #2F4858;
+font-size: 20px;
+justify-content: center;
+
+position: -webkit-sticky; /* for Safari */
+position: sticky;
+top: 30px;
+left: 50%;
+transform: translateX(-45%);
+align-self: flex-start; /* <-- this is the fix */
+
+}
+
+.showTable{
+  border: 1px solid red;
+  font-size: 20px;
+  margin-top: 0px;
+}
+
+
+
+
+.buttons{
+  display: flex;
+  flex-direction: row;
+  font-size: 16px;
+  justify-content: center;
+}
+
+.buton{
+  font-size: 16px;
+}
+
+.forms{
+  font-size: 16px;
+
+}
+
 .newplayerforma{
   display: flex;
   justify-content: center;
@@ -20,39 +62,8 @@
   margin-right: 50px;
 }
 
-
-.parent{
-    display: flex;
-    flex-direction:  column;
-    justify-content: center;
-    border: 1px red solid;
-}
-
-.ch1{
-  border: 1px solid cyan;
-  display: block;
-  min-height: 100px;
-}
-
-.ch3{
-  margin-top: 3vh;
-  border: 1px magenta solid;
-  display: flex;
-  justify-content: center;
-  
- 
-}
-
-.ch2{
-  border: 1px solid cyan;
-  display: block;
-  min-height: 100px;
-  padding: 30px;
-  position: fixed;
-}
-
-.ch4{
-  display: flex;
-  justify-content: center;
-  
-}
+@media screen and (max-height: 600px) {
+  .buttonAndForm{
+    transform: translateX(-46%);
+  }
+ }

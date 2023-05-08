@@ -64,6 +64,7 @@ function TeamForm(props){
         }).then(res => {
             console.log(res);
             props.refresh();
+            props.pushed();
         });
 
     };
@@ -86,7 +87,7 @@ function TeamForm(props){
             <input type="text" className='formainput' id="BuldingNumber" name="BuldingNumber" placeholder='Type' onChange={handleChange}/>
             <br/>
 
-            <button onClick={Submit}>Create Team</button>
+            <button onClick={Submit} class='sada'>Create Team</button>
         </div>
     )
 

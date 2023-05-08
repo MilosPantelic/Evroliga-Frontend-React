@@ -90,7 +90,7 @@ function EditTeam(props){
             <input type="text" className='formainput' id="BuldingNumber" name="BuldingNumber" placeholder='Type' onChange={handleChange} value={brojgradjevine}/>
             <br/>
 
-            <button onClick={Submit} >Edit</button>
+            <button onClick={Submit} className='sada' >Edit</button>
         </div>
     )
 

@@ -1,7 +1,18 @@
+
 .formalabela{
     display: block;
+    margin-left: 30px;
+    margin-right: 30px;
+    margin-bottom: 10px;
 }
 
 .formainput{
     display: block;
+    margin-left: 30px;
+    margin-right: 30px;
+
+}
+
+.sada{
+    margin-left: 30%;
 }

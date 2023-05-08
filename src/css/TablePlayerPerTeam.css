@@ -1,34 +1,34 @@
 .perant_tppt {
     display: flex;
-    flex-direction:  row;
     flex-wrap: wrap;
-
 }
   
 .tppt {
     border: 1px solid red;
-    display: inline-block;
-    font-size: 20px;
-    
-  }
+    font-size: 20px;    
+
+}
 
   
   .tppt2 {
     border: 1px solid red;
+}
 
-  }
+.tppt3{
+  position: -webkit-sticky; /* for Safari */
+  position: sticky;
+  top: 30px;
+  align-self: flex-start; /* <-- this is the fix */
+}
 
- 
+
 
   @media screen and (min-width: 300px) {
    .tppt2{
-    display: inline-block;
+  
     font-size: 20px;
     padding: 20px;
     background-color: #999;
-    z-index: 10; 
-    position: fixed;
     height: auto;
-    
    }
   }

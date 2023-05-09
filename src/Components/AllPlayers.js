@@ -58,7 +58,7 @@ function AllPlayers(){
                         <h2>Visina: {element.height}</h2>
                         <h2>Pozicija: {Pozicija(element.position)}</h2>
                         <h2>Broj na dresu: {element.jersey}</h2>
-                        <h2>Tim: {}</h2>
+                        <h2>Tim: {element.playForTeam}</h2>
                         
                     </>
                 )

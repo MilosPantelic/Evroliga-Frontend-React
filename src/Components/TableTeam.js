@@ -34,8 +34,9 @@ function TableTeams(){
 
 
   
-  const [openNewTeamForm, setOpenNewTeamForm] = useState(false)
-  const [showNewTeamButton,setshowNewTeamButton] = useState(true)
+  const [openNewTeamForm, setOpenNewTeamForm] = useState(false);
+  const [showNewTeamButton,setshowNewTeamButton] = useState(true);
+
 
 
   const NewTeam = () => {
@@ -79,8 +80,7 @@ function TableTeams(){
   const hiddeForm = () =>{
     if(openNewTeamForm == true){
       setOpenNewTeamForm(false);
-    
-      
+      setshowNewTeamButton(true);    
     }
    
   };
@@ -112,6 +112,7 @@ function TableTeams(){
           <div className='buttonAndForm'>
             <div className='buttons'>
               <div className='buton'>{ showNewTeamButton ? <NewTeam /> : <Closebutton />  }</div>
+
             </div>
 
           <div className='forms'>

@@ -27,7 +27,26 @@ function TablePlayerPerTeam(props){
          console.log(res.data);
        });
      }
-
+     var Pozicija = (prop) => {
+        switch(prop){
+         case 1:
+             return("PlejMejker");
+  
+         case 2:
+             return("Levi Bek suter (2)");
+ 
+         case 3:
+             return("Desni bek suter (3)");
+          
+         case 4:
+             return("Krilo");
+ 
+         case 5:
+             return("Centar");
+   
+ 
+         }
+     }
      useEffect(() => {
        dataAxios();
      },[]);
@@ -35,7 +54,7 @@ function TablePlayerPerTeam(props){
     
      const Deletee =(prosledjeno) => () => {
         console.log(prosledjeno);
-        axios.delete('http://localhost:5023/delteteam/' + prosledjeno). then(res =>{
+        axios.delete('http://localhost:5023/deletepalyer/' + prosledjeno). then(res =>{
             dataAxios();   
             console.log("obrisano!");
      })};
@@ -50,8 +69,9 @@ function TablePlayerPerTeam(props){
                 prikazTabele2.map(element => {
                 return(
                 <>
+                <div >
                     <h2>Ime Igraca: {element.firstName}  {element.lastName}</h2> 
-                    <h3>Pozicija: {element.position}</h3>
+                    <h3>Pozicija: {Pozicija(element.position)}</h3>
                     <h3>Broj na dresu: {element.jersey}</h3>
                     <button onClick={Deletee(element.id)}>Delete Player</button>
                     <button onClick={() => {navigate('/states',{
@@ -62,6 +82,7 @@ function TablePlayerPerTeam(props){
                 })}}>Show states of play</button>
                     <br/>
                     <br/>
+                </div>
                 </>
                 )
                 })

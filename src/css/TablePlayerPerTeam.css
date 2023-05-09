@@ -1,6 +1,7 @@
 .perant_tppt {
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-between;
 }
   
 .tppt {
@@ -8,8 +9,6 @@
     font-size: 20px;    
 
 }
-
-  
   .tppt2 {
     border: 1px solid red;
 }

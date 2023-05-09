@@ -58,11 +58,11 @@ function AddCities(){
   
   else{
     if(Object.keys(prikazTabele).length<2){
-      alert("Unesite 2 grad");
       return(
         <>
         <div>
-            <div>Broj unetih gradova: {2 - Object.keys(prikazTabele).length}</div>
+            <div>Unesite grad (ukupno treba da budu 2): {2 - Object.keys(prikazTabele).length}</div>
+            <i><div>Please add city(in sum must be 2): {2 - Object.keys(prikazTabele).length}</div></i>
             <label></label>
             <input type="text" name='cityName' onChange={handleChange} ></input>
             <button onClick={Submit}>Submit</button>
